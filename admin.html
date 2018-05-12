@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<!-- define angular app -->
+<html ng-app="myapp">
+
+<head>
+  <!-- SCROLLS -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+ <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+
+    
+<script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+    
+<script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+    
+<script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+    
+<script src="http://ui-grid.info/release/ui-grid-unstable.js"></script>
+
+<!--<script src="http://ui-grid.info/release/ui-grid.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+
+<!-- define angular controller -->
+<body ng-controller="mainController">
+
+
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">GOV_DOCS</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#license"><i class="glyphicon glyphicon-th-list"></i>License Douments</a></li>
+        <li><a href="#aadhar"><i class="glyphicon glyphicon-th-list"></i>Aadhar Documents</a></li>
+        <li><a href="#pan"><i class="glyphicon glyphicon-th-list"></i>PAN Documents</a></li>
+        <button type="button" class="btn btn-default btn-sm" onclick="logout()">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </button>
+      </ul>
+    </div>
+  </nav>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div id="main">
+  
+    <div ng-view></div>
+    
+  </div>
+
+  
+   <br>
+  <br>
+  <br>
+  <br> <br>
+  <br>
+  <br>
+  <br>
+  <footer class="text-center">
+   BY PRAFFUL SOLANKI
+  </footer>
+    <script src="script1.js"></script>
+</body>
+
+</html>
