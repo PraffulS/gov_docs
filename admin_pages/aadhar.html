@@ -1,0 +1,193 @@
+<div id="myModal" style="position: fixed;" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="position: fixed;" role="dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Edit Details</h4>
+                </div>
+                <div class="modal-body" id="body1">
+                <form class="form-style-7">
+                <ul>
+                    <li>
+                    <label for="name">Name</label>
+                    <input type="text" id="mname" name="name" ng-model="mname" maxlength="50">
+                    <span>Enter full name here</span>
+                    </li>
+                    <li>
+                    <label for="name">UsernName</label>
+                    <input type="text" id="muname" name="name" ng-model="muname" maxlength="50">
+                    <span>Enter username here</span>
+                    </li>
+                    <li>
+                    <label for="email">Aadhar number</label>
+                    <input type="text" id="mlicense_no" name="lno" ng-model="maadhar_no"  maxlength="10">
+                    <span>Enter a valid Aadhar number</span>
+                    </li>
+                    <li>
+                    <label for="bio">Date of Birth</label>
+                    <input type="text" id="mvehicle_category"  name="vc" ng-model="mdob" maxlength="10">
+                    <span>Date of Birth</span>
+                    </li>
+                </ul>
+                </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">cancel</button>
+                    <button type="button" class="btn btn-primary" ng-click="update2()">update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<center>
+<table class="table table-striped custab" style="width: 70%">
+    <thead>
+    <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Aadhar Number</th>
+                    <th>Date of Birth</th>
+                    <th colspan="2"><center>Action</center></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input class="form-control" ng-model="name"></td>
+                    <td><input class="form-control" ng-model="uname"></td>
+                    <td><input class="form-control" ng-model="aadhar_no"></td>
+                    <td><input class="form-control" ng-model="dob"></td>
+                    <td><center><button class="btn btn-primary" ng-click="submit()">Add this document</button></center></td>
+                </tr>
+            </tbody>
+    </thead>
+
+            <tr ng-repeat="event in myData1">
+             <td>{{event.name}}</td>
+        <td>{{event.username}}</td>
+        <td>{{event.aadhar_no}}</td>
+        <td>{{event.dob}}</td>
+        <td>
+        <button class="btn btn-danger btn-xs" ng-click="delete1(event._id.$oid)"><span class="glyphicon glyphicon-remove"></span>Delete</button> 
+        </td>
+         <td>
+        <button class="btn btn-success btn-xs" ng-click="update1(event._id.$oid)"><span class="glyphicon glyphicon-plus"></span>Update</button> 
+        </td>
+        </tr>
+
+            
+    </table>
+    </center>
+    <style type="text/css">
+      .form-style-7{
+    max-width:400px;
+    margin:50px auto;
+    background:#fff;
+    border-radius:2px;
+    padding:20px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+.form-style-7 h1{
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0px 0px 20px 0px;
+    color: #5C5C5C;
+    font-size:x-large;
+}
+.form-style-7 ul{
+    list-style:none;
+    padding:0;
+    margin:0;   
+}
+.form-style-7 li{
+    display: block;
+    padding: 9px;
+    border:1px solid #DDDDDD;
+    margin-bottom: 30px;
+    border-radius: 3px;
+}
+.form-style-7 li:last-child{
+    border:none;
+    margin-bottom: 0px;
+    text-align: center;
+}
+.form-style-7 li > label{
+    display: block;
+    float: left;
+    margin-top: -19px;
+    background: #FFFFFF;
+    height: 14px;
+    padding: 2px 5px 2px 5px;
+    color: #B9B9B9;
+    font-size: 14px;
+    
+    font-family: Arial, Helvetica, sans-serif;
+}
+.form-style-7 input[type="text"],
+.form-style-7 input[type="date"],
+.form-style-7 input[type="datetime"],
+.form-style-7 input[type="email"],
+.form-style-7 input[type="number"],
+.form-style-7 input[type="search"],
+.form-style-7 input[type="time"],
+.form-style-7 input[type="url"],
+.form-style-7 input[type="password"],
+.form-style-7 textarea,
+.form-style-7 select 
+{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    display: block;
+    outline: none;
+    border: none;
+    height: 25px;
+    line-height: 25px;
+    font-size: 16px;
+    padding: 0;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+.form-style-7 input[type="text"]:focus,
+.form-style-7 input[type="date"]:focus,
+.form-style-7 input[type="datetime"]:focus,
+.form-style-7 input[type="email"]:focus,
+.form-style-7 input[type="number"]:focus,
+.form-style-7 input[type="search"]:focus,
+.form-style-7 input[type="time"]:focus,
+.form-style-7 input[type="url"]:focus,
+.form-style-7 input[type="password"]:focus,
+.form-style-7 textarea:focus,
+.form-style-7 select:focus 
+{
+}
+.form-style-7 li > span{
+    background: #F3F3F3;
+    display: block;
+    padding: 3px;
+    margin: 0 -9px -9px -9px;
+    text-align: center;
+    color: #C0C0C0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+.form-style-7 textarea{
+    resize:none;
+}
+.form-style-7 input[type="submit"],
+.form-style-7 input[type="button"]{
+    background: #2471FF;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    border-bottom: 3px solid #5994FF;
+    border-radius: 3px;
+    color: #D2E2FF;
+}
+.form-style-7 input[type="submit"]:hover,
+.form-style-7 input[type="button"]:hover{
+    background: #6B9FFF;
+    color:#fff;
+}
+    </style>
