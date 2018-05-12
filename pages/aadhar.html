@@ -1,0 +1,262 @@
+<div class="container">
+
+<div id="myModal" style="position: fixed;" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="position: fixed;" role="dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Edit Aadhar Details</h4>
+                </div>
+                <div class="modal-body" id="body1">
+                <form class="form-style-7">
+                <ul>
+                    <li>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" ng-model="mname" maxlength="50">
+                    <span>Enter your full name here (as in aaadhar card)</span>
+                    </li>
+                    <li>
+                    <label for="email">Aadhar number</label>
+                    <input type="text" name="lno" ng-model="maadhar_no"  maxlength="12" minlength="10">
+                    <span>Enter a Aadhar number</span>
+                    </li>
+                    <li>
+                    <label for="bio">Date of Birth</label>
+                    <input type="text" name="vc" ng-model="mdob" maxlength="10">
+                    <span>Date of Birth</span>
+                    </li>
+                </ul>
+                </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">cancel</button>
+                    <button type="button" class="btn btn-primary" ng-click="edit2()">update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div ng-if="div1===true">
+<div>
+<div class="parent-wrapper">
+  
+<form class="form-style-7">
+<ul>
+<li>
+    <label for="name">Name</label>
+    <input type="text" name="name" ng-model="$ac.name" maxlength="50">
+    <span>Enter your full name  (as in aadhar card)</span>
+</li>
+<li>
+    <label for="email">Aadhar number</label>
+    <input type="text" name="lno" ng-model="$ac.aadhar_no"  maxlength="12" maxlength="10">
+    <span>Enter a Aadhar number</span>
+</li>
+<li>
+    <label for="url">Date of birth</label>
+    <input type="text" name="dob" ng-model="$ac.dob" maxlength="10">
+    <span>Your date of birth (dd/mm/yyyy format)</span>
+</li>
+<li>
+    <input type="submit" value="Send This" ng-click="submit()" >
+</li>
+</ul>
+</form>
+</div>
+</div>
+</div>
+
+<div ng-if="div2===true">
+<div>
+<div class="list-type1">
+<ol ng-repeat="x in myData1">
+<li><a>NAME - <b>{{x.name}}</b></a></li>
+<li><a>AADHAR NUMBER - <b>{{x.aadhar_no}}</b></a></li>
+<li><a>DATE OF BIRTH - <b>{{x.dob}}</b></a></li>
+</ol>
+</div>
+
+<center><button  class='btn btn-info btn-s' ng-click="edit1()" href="index#demo" ><span class="glyphicon glyphicon-edit"></span> Edit Details </button></center>
+</div>
+</div>   
+</div>
+<style type="text/css">
+   <style type="text/css">
+
+.form-style-7{
+    max-width:400px;
+    margin:50px auto;
+    background:#fff;
+    border-radius:2px;
+    padding:20px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+.form-style-7 h1{
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0px 0px 20px 0px;
+    color: #5C5C5C;
+    font-size:x-large;
+}
+.form-style-7 ul{
+    list-style:none;
+    padding:0;
+    margin:0;   
+}
+.form-style-7 li{
+    display: block;
+    padding: 9px;
+    border:1px solid #DDDDDD;
+    margin-bottom: 30px;
+    border-radius: 3px;
+}
+.form-style-7 li:last-child{
+    border:none;
+    margin-bottom: 0px;
+    text-align: center;
+}
+.form-style-7 li > label{
+    display: block;
+    float: left;
+    margin-top: -19px;
+    background: #FFFFFF;
+    height: 14px;
+    padding: 2px 5px 2px 5px;
+    color: #B9B9B9;
+    font-size: 14px;
+    
+    font-family: Arial, Helvetica, sans-serif;
+}
+.form-style-7 input[type="text"],
+.form-style-7 input[type="date"],
+.form-style-7 input[type="datetime"],
+.form-style-7 input[type="email"],
+.form-style-7 input[type="number"],
+.form-style-7 input[type="search"],
+.form-style-7 input[type="time"],
+.form-style-7 input[type="url"],
+.form-style-7 input[type="password"],
+.form-style-7 textarea,
+.form-style-7 select 
+{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    display: block;
+    outline: none;
+    border: none;
+    height: 25px;
+    line-height: 25px;
+    font-size: 16px;
+    padding: 0;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+.form-style-7 input[type="text"]:focus,
+.form-style-7 input[type="date"]:focus,
+.form-style-7 input[type="datetime"]:focus,
+.form-style-7 input[type="email"]:focus,
+.form-style-7 input[type="number"]:focus,
+.form-style-7 input[type="search"]:focus,
+.form-style-7 input[type="time"]:focus,
+.form-style-7 input[type="url"]:focus,
+.form-style-7 input[type="password"]:focus,
+.form-style-7 textarea:focus,
+.form-style-7 select:focus 
+{
+}
+.form-style-7 li > span{
+    background: #F3F3F3;
+    display: block;
+    padding: 3px;
+    margin: 0 -9px -9px -9px;
+    text-align: center;
+    color: #C0C0C0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+.form-style-7 textarea{
+    resize:none;
+}
+.form-style-7 input[type="submit"],
+.form-style-7 input[type="button"]{
+    background: #2471FF;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    border-bottom: 3px solid #5994FF;
+    border-radius: 3px;
+    color: #D2E2FF;
+}
+.form-style-7 input[type="submit"]:hover,
+.form-style-7 input[type="button"]:hover{
+    background: #6B9FFF;
+    color:#fff;
+}
+.list-type1{
+width:400px;
+margin:0 auto;
+}
+
+.list-type1 ol{
+counter-reset: li;
+list-style: none;
+*list-style: decimal;
+font-size: 15px;
+font-family: 'Raleway', sans-serif;
+padding: 0;
+margin-bottom: 4em;
+}
+.list-type1 ol ol{
+margin: 0 0 0 2em;
+}
+
+.list-type1 a{
+position: relative;
+display: block;
+padding: .4em .4em .4em 2em;
+*padding: .4em;
+margin: .5em 0;
+background: #93C775;
+color: #000;
+text-decoration: none;
+-moz-border-radius: .3em;
+-webkit-border-radius: .3em;
+border-radius: 10em;
+transition: all .2s ease-in-out;
+}
+
+.list-type1 a:hover{
+background: #d6d4d4;
+text-decoration:none;
+transform: scale(1.1);
+}
+
+.list-type1 a:before{
+content: counter(li);
+counter-increment: li;
+position: absolute;
+left: -1.3em;
+top: 50%;
+margin-top: -1.3em;
+background:#93C775;
+height: 2em;
+width: 2em;
+line-height: 2em;
+border: .3em solid #fff;
+text-align: center;
+font-weight: bold;
+-moz-border-radius: 2em;
+-webkit-border-radius: 2em;
+border-radius: 2em;
+color:#FFF;
+}
+</style>
+<script type="text/javascript">
+//auto expand textarea
+function adjust_textarea(h) {
+    h.style.height = "20px";
+    h.style.height = (h.scrollHeight)+"px";
+}
+</script>
+</style>
